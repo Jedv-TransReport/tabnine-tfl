@@ -3,13 +3,13 @@
 theme: seriph
 # random image from a curated Unsplash collection by Anthony
 # like them? see https://unsplash.com/collections/94734566/slidev
-background: https://source.unsplash.com/collection/94734566/1920x1080
+background: https://images.unsplash.com/photo-1606606767399-01e271823a2e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80
 # apply any windi css classes to the current slide
 class: 'text-center'
 # https://sli.dev/custom/highlighters.html
 highlighter: shiki
 # show line numbers in code blocks
-lineNumbers: false
+lineNumbers: true
 # some information about the slides, markdown enabled
 info: |
   ## Slidev Starter Template
@@ -23,363 +23,146 @@ drawings:
 css: unocss
 ---
 
-# Welcome to Slidev
+# What is TabNine?
 
-Presentation slides for developers
+---
 
-<div class="pt-12">
-  <span @click="$slidev.nav.next" class="px-2 py-1 rounded cursor-pointer" hover="bg-white bg-opacity-10">
-    Press Space for next page <carbon:arrow-right class="inline"/>
-  </span>
+# TabNine Brief Intro
+
+##### Tabnine describes itself on its homepage as an: 
+<br/>
+
+> "AI Assistant For Software Developers to Code Faster With Whole-Line & Full-Function Code Completions"
+
+Its aim being to increase productivity and take auto-completion to the next level either project, company or open source community wide.
+
+Using machine learning and other predictive techniques, TabNine can eventually quite accurately suggest what your about to write and it gives you a variable (default: 5) set of suggestions in order of % likelihood your going to want to use it. 
+
+##### Very Quick Example:
+
+<img alt="Example of TabNine Autocompletion" src="https://imgs.search.brave.com/W6oOoSBdnj8Xs3thMGNjUe1WQRFdz2qkDfy5Un6Ufgg/rs:fit:800:391:1/g:ce/aHR0cHM6Ly90ZXJt/aW5hbHJvb3QuY29t/LmJyL2Fzc2V0cy9p/bWcvcHJvZ3JhbWFj/YW8vdGFibmluZS5n/aWY.gif" width="350" />
+
+--- 
+
+# Can we use it at Transreport right now? 
+<div style="color:red;">
+The short answer right now is: *no*, on pain of Codrut pizza death.
+
+We are applying at the moment to have it all legally reviewed so for now please just try to not fall asleep during the presentation but *PLEASE* do not install TabNine, GitHub CoPilot or any similar autocompletion that is not locally trained only or based on editor plugins for languages such as Vue extension packs with templates until we have had it signed off by legal & the boys at the top (me).
 </div>
+---
 
-<div class="abs-br m-6 flex gap-2">
-  <button @click="$slidev.nav.openInEditor()" title="Open in Editor" class="text-xl icon-btn opacity-50 !border-none !hover:text-white">
-    <carbon:edit />
-  </button>
-  <a href="https://github.com/slidevjs/slidev" target="_blank" alt="GitHub"
-    class="text-xl icon-btn opacity-50 !border-none !hover:text-white">
-    <carbon-logo-github />
-  </a>
-</div>
+# How does it achieve this? 
 
-<!--
-The last comment block of each slide will be treated as slide notes. It will be visible and editable in Presenter Mode along with the slide. [Read more in the docs](https://sli.dev/guide/syntax.html#notes)
--->
+- "Deep TabNine" - OpenAI’s GPT-2 Machine Learning Model (Transformer architecture)
+> Trained on nearly 2 million files from GitHub, Deep TabNine comes with pre-existing knowledge, instead of learning only from a user’s current project.
+- Additionally, the model also refers to documentation written in natural language to infer function names, parameters, and return types.
+- It is capable of using small clues that are difficult for a traditional tool to access. For instance, it understands that the return type of app.get_user() is assumed to be an object with setter methods and the return type of app.get_users() is assumed to be a list.
+- It also can scan your local project to further learn your language & implementation style.
+- It can even use company-wide or enterprise team accounts to share learning model across an internal team and it's projects.
+- It is completely language agnostic aslong as it has some existing learning trained on that language.
 
 ---
 
-# What is Slidev?
+# What is OpenAI's GPT-2 ML Model?
 
-Slidev is a slides maker and presenter designed for developers, consist of the following features
+Let's take the Wikipedia intro paragraphs as a good starting point:
 
-- 📝 **Text-based** - focus on the content with Markdown, and then style them later
-- 🎨 **Themable** - theme can be shared and used with npm packages
-- 🧑‍💻 **Developer Friendly** - code highlighting, live coding with autocompletion
-- 🤹 **Interactive** - embedding Vue components to enhance your expressions
-- 🎥 **Recording** - built-in recording and camera view
-- 📤 **Portable** - export into PDF, PNGs, or even a hostable SPA
-- 🛠 **Hackable** - anything possible on a webpage
+> Generative Pre-trained Transformer 2 (GPT-2) is an open-source artificial intelligence created by OpenAI in February 2019. GPT-2 translates text, answers questions, summarizes passages, and generates text output on a level that, while sometimes indistinguishable from that of humans, can become repetitive or nonsensical when generating long passages. It is a general-purpose learner; it was not specifically trained to do any of these tasks, and its ability to perform them is an extension of its general ability to accurately synthesize the next item in an arbitrary sequence. GPT-2 was created as a "direct scale-up" of OpenAI's 2018 GPT model, with a ten-fold increase in both its parameter count and the size of its training dataset.
 
-<br>
-<br>
+> The GPT architecture implements a deep neural network, specifically a transformer model, which uses attention in place of previous recurrence- and convolution-based architectures. Attention mechanisms allow the model to selectively focus on segments of input text it predicts to be the most relevant. This model allows for greatly increased parallelization, and outperforms previous benchmarks for RNN/CNN/LSTM-based models.
 
-Read more about [Why Slidev?](https://sli.dev/guide/why)
-
-<!--
-You can have `style` tag in markdown to override the style for the current page.
-Learn more: https://sli.dev/guide/syntax#embedded-styles
--->
-
-<style>
-h1 {
-  background-color: #2B90B6;
-  background-image: linear-gradient(45deg, #4EC5D4 10%, #146b8c 20%);
-  background-size: 100%;
-  -webkit-background-clip: text;
-  -moz-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  -moz-text-fill-color: transparent;
-}
-</style>
+> OpenAI released the complete version of the GPT-2 language model (with 1.5 billion parameters) in November 2019. GPT-2 was to be followed by the 175-billion-parameter GPT-3, revealed to the public in 2020 (whose source code has never been made available). Access to GPT-3 is provided exclusively through an API offered by Microsoft.
 
 ---
 
-# Navigation
+# What does any of this mean? 
 
-Hover on the bottom-left corner to see the navigation's controls panel, [learn more](https://sli.dev/guide/navigation.html)
+- ML or "Machine Learning" uses statistical analysis and data science to create learning mathematical models to make predictions on a confidence level of 0.0 to 1.0 (0-100%)
+- Neural Networks are an upgrade on the original ML ideas and take it a step further, actually creating artificial neurons like in our brains and then making them learn over time.
+- GPT is the king for this type of processing based around predictions on language, so in our case the typing of programming code or documentation.
+- Technology has now reached the point where it can learn and over time apply better and better predictions to what we might type next, what the next news headline might be and all sorts of amazing functionality. (Some of you may of seen some famous image-generation or image-decoding ML models in recent years especially the dream type one done by Google.)
 
-### Keyboard Shortcuts
-
-|     |     |
-| --- | --- |
-| <kbd>right</kbd> / <kbd>space</kbd>| next animation or slide |
-| <kbd>left</kbd>  / <kbd>shift</kbd><kbd>space</kbd> | previous animation or slide |
-| <kbd>up</kbd> | previous slide |
-| <kbd>down</kbd> | next slide |
-
-<!-- https://sli.dev/guide/animations.html#click-animations -->
-<img
-  v-click
-  class="absolute -bottom-9 -left-7 w-80 opacity-50"
-  src="https://sli.dev/assets/arrow-bottom-left.svg"
-/>
-<p v-after class="absolute bottom-23 left-45 opacity-30 transform -rotate-10">Here!</p>
-
+--- 
+layout: two-cols
 ---
-layout: image-right
-image: https://source.unsplash.com/collection/94734566/1920x1080
----
+# What does a Neural Network look like?
 
-# Code
+- You have your inputs = where the data goes in to be processed. 
+- You have 1 or more hidden layers that carry our the internal ML model's processing. Similar to logic gates in processors but based off of artificial neurons instead. 
+- The neural network then has outputs that give the results. 
+- Yes for anyone in the know this is a major simplification but I wanted it to be friendly to begin with ;) 
+- We started off with just ANN and RNN, RNN was used for language processing (Recurrant Neural Networks) 
+- RNN struggled with its long term learning memory, so someone needed to come along with something better.
 
-Use code snippets and get the highlighting directly![^1]
+::right::
 
-```ts {all|2|1-6|9|all}
-interface User {
-  id: number
-  firstName: string
-  lastName: string
-  role: string
-}
+<img src="https://www.researchgate.net/profile/Mostafa-Rahimi-Jamnani-2/publication/340646492/figure/fig4/AS:901557319127041@1591959423839/The-structure-of-the-artificial-neural-network-model-used-in-this-study.png" width="500" style="margin-top:6rem;" />
 
-function updateUser(id: number, update: User) {
-  const user = getUser(id)
-  const newUser = { ...user, ...update }
-  saveUser(id, newUser)
-}
-```
+--- 
 
-<arrow v-click="3" x1="400" y1="420" x2="230" y2="330" color="#564" width="3" arrowSize="1" />
+# Attention Is All You Need
 
-[^1]: [Learn More](https://sli.dev/guide/syntax.html#line-highlighting)
+In 2017 some researchers from Cornell University published a paper titled 'Attention is all you need'.
+This addressed many issues of Recurrant Neural Networks and suggested a different paradigm approach they donned the 'transformer' neural network.
 
-<style>
-.footnotes-sep {
-  @apply mt-20 opacity-10;
-}
-.footnotes {
-  @apply text-sm opacity-75;
-}
-.footnote-backref {
-  display: none;
-}
-</style>
+>We propose a new simple network architecture, the Transformer, based solely on attention mechanisms, dispensing with recurrence and convolutions entirely. Experiments on two machine translation tasks show these models to be superior in quality while being more parallelizable and requiring significantly less time to train.
+
+<br/>
+
+>One main difference is that the input sequence can be passed parallelly so that GPU can be used effectively and the speed of training can also be increased. It is also based on the multi-headed attention layer, so it easily overcomes the vanishing gradient issue (the previously mentioned memory issues). The paper applies the transformer to an NMT.
+
+<br/>
+
+>For example, in a translator made up of a simple RNN, we input our sequence or the sentence in a continuous manner, one word at a time, to generate word embeddings. As every word depends on the previous word, its hidden state acts accordingly, so we have to feed it in one step at a time. 
+
+<br/>
+
+>In a transformer, however, we can pass all the words of a sentence and determine the word embedding simultaneously.
 
 ---
 
-# Components
+# So how did all this enable TabNine to get so good? 
 
-<div grid="~ cols-2 gap-4">
-<div>
+Neural networks are all about the layers inside, and with the transformer architecture they could parse words and their contexts and sentences, positioning, translation all in parallel rather than before having to represent them one at a time, now with NLP (Natural Language Processing) - words are usually represented by vectors or other data types as computers typically don't understand any spoken language or any that can be interpreted more than one way.
 
-You can use Vue components directly inside your slides.
+With OpenAI releasing their GPT-2 Transformer based architecture, TabNine used it as the first building block in putting together one of the best examples of NLP & Machine Learning Prediction that I have seen today. Just like the Mintlify project which is now doing the same GPT tactics but to document your code!
 
-We have provided a few built-in components like `<Tweet/>` and `<Youtube/>` that you can use directly. And adding your custom components is also super easy.
+Also with the ability for it to train using millions of lines of existing GitHub code covering all the top projects and most used languages - it gives it an extra edge compared to if you just locally or company internally train it. 
 
-```html
-<Counter :count="10" />
-```
+Though it can yes be set so all your internal code remains secure, you can host your own TabNine code server for enterprise use and security compliance.
 
-<!-- ./components/Counter.vue -->
-<Counter :count="10" m="t-4" />
-
-Check out [the guides](https://sli.dev/builtin/components.html) for more.
-
-</div>
-<div>
-
-```html
-<Tweet id="1390115482657726468" />
-```
-
-<Tweet id="1390115482657726468" scale="0.65" />
-
-</div>
-</div>
-
-
----
-class: px-20
----
-
-# Themes
-
-Slidev comes with powerful theming support. Themes can provide styles, layouts, components, or even configurations for tools. Switching between themes by just **one edit** in your frontmatter:
-
-<div grid="~ cols-2 gap-2" m="-t-2">
-
-```yaml
----
-theme: default
----
-```
-
-```yaml
----
-theme: seriph
----
-```
-
-<img border="rounded" src="https://github.com/slidevjs/themes/blob/main/screenshots/theme-default/01.png?raw=true">
-
-<img border="rounded" src="https://github.com/slidevjs/themes/blob/main/screenshots/theme-seriph/01.png?raw=true">
-
-</div>
-
-Read more about [How to use a theme](https://sli.dev/themes/use.html) and
-check out the [Awesome Themes Gallery](https://sli.dev/themes/gallery.html).
-
----
-preload: false
----
-
-# Animations
-
-Animations are powered by [@vueuse/motion](https://motion.vueuse.org/).
-
-```html
-<div
-  v-motion
-  :initial="{ x: -80 }"
-  :enter="{ x: 0 }">
-  Slidev
-</div>
-```
-
-<div class="w-60 relative mt-6">
-  <div class="relative w-40 h-40">
-    <img
-      v-motion
-      :initial="{ x: 800, y: -100, scale: 1.5, rotate: -50 }"
-      :enter="final"
-      class="absolute top-0 left-0 right-0 bottom-0"
-      src="https://sli.dev/logo-square.png"
-    />
-    <img
-      v-motion
-      :initial="{ y: 500, x: -100, scale: 2 }"
-      :enter="final"
-      class="absolute top-0 left-0 right-0 bottom-0"
-      src="https://sli.dev/logo-circle.png"
-    />
-    <img
-      v-motion
-      :initial="{ x: 600, y: 400, scale: 2, rotate: 100 }"
-      :enter="final"
-      class="absolute top-0 left-0 right-0 bottom-0"
-      src="https://sli.dev/logo-triangle.png"
-    />
-  </div>
-
-  <div
-    class="text-5xl absolute top-14 left-40 text-[#2B90B6] -z-1"
-    v-motion
-    :initial="{ x: -80, opacity: 0}"
-    :enter="{ x: 0, opacity: 1, transition: { delay: 2000, duration: 1000 } }">
-    Slidev
-  </div>
-</div>
-
-<!-- vue script setup scripts can be directly used in markdown, and will only affects current page -->
-<script setup lang="ts">
-const final = {
-  x: 0,
-  y: 0,
-  rotate: 0,
-  scale: 1,
-  transition: {
-    type: 'spring',
-    damping: 10,
-    stiffness: 20,
-    mass: 2
-  }
-}
-</script>
-
-<div
-  v-motion
-  :initial="{ x:35, y: 40, opacity: 0}"
-  :enter="{ y: 0, opacity: 1, transition: { delay: 3500 } }">
-
-[Learn More](https://sli.dev/guide/animations.html#motion)
-
-</div>
+Also with companies such as AMD & Nvidia really pushing the bar so far now with parallel ML based processing, just in the years it has taken for the researchers to come up with better models, the hardware side has also never stopped progressing at an extraordinary rate especially for GPUs due to the 'crypto boom' (Someone else do a TFL on that, I hate it these days).
 
 ---
 
-# LaTeX
+# Is GitHub CoPilot as good? 
 
-LaTeX is supported out-of-box powered by [KaTeX](https://katex.org/).
+#### No.
+<br/>
 
-<br>
+# Is this my own opinion or a fact? 
 
-Inline $\sqrt{3x-1}+(1+x)^2$
+#### Both.
+<br/>
 
-Block
-$$
-\begin{array}{c}
+# Should I ever install it if we do have legal permission?
 
-\nabla \times \vec{\mathbf{B}} -\, \frac1c\, \frac{\partial\vec{\mathbf{E}}}{\partial t} &
-= \frac{4\pi}{c}\vec{\mathbf{j}}    \nabla \cdot \vec{\mathbf{E}} & = 4 \pi \rho \\
+#### Depends on how much you like me. Plus mixing it with TabNine is a big no-no and we all know which is better. ;)
+<br/>
 
-\nabla \times \vec{\mathbf{E}}\, +\, \frac1c\, \frac{\partial\vec{\mathbf{B}}}{\partial t} & = \vec{\mathbf{0}} \\
+--- 
 
-\nabla \cdot \vec{\mathbf{B}} & = 0
+# Other Applications of GPT-2/3 Transformer Models 
 
-\end{array}
-$$
+- Governments used them during the pandemic to automatically search for disinformation across the internet and social media platforms. 
+- Translation between spoken languages it can work really well with, e.g. French to English, English to German.
+- GPT-3 now out has greatly improved processing but has not reached the likes of the TabNine architecture yet, we are expecting even bigger results in the next 5 years from GPT-3
 
-<br>
+<br/>
 
-[Learn more](https://sli.dev/guide/syntax#latex)
+# Other Applications of Machine Learning in General
 
----
-
-# Diagrams
-
-You can create diagrams / graphs from textual descriptions, directly in your Markdown.
-
-<div class="grid grid-cols-3 gap-10 pt-4 -mb-6">
-
-```mermaid {scale: 0.5}
-sequenceDiagram
-    Alice->John: Hello John, how are you?
-    Note over Alice,John: A typical interaction
-```
-
-```mermaid {theme: 'neutral', scale: 0.8}
-graph TD
-B[Text] --> C{Decision}
-C -->|One| D[Result 1]
-C -->|Two| E[Result 2]
-```
-
-```plantuml {scale: 0.7}
-@startuml
-
-package "Some Group" {
-  HTTP - [First Component]
-  [Another Component]
-}
-
-node "Other Groups" {
-  FTP - [Second Component]
-  [First Component] --> FTP
-}
-
-cloud {
-  [Example 1]
-}
-
-
-database "MySql" {
-  folder "This is my folder" {
-    [Folder 3]
-  }
-  frame "Foo" {
-    [Frame 4]
-  }
-}
-
-
-[Another Component] --> [Example 1]
-[Example 1] --> [Folder 3]
-[Folder 3] --> [Frame 4]
-
-@enduml
-```
-
-</div>
-
-[Learn More](https://sli.dev/guide/syntax.html#diagrams)
-
-
----
-layout: center
-class: text-center
----
-
-# Learn More
-
-[Documentations](https://sli.dev) · [GitHub](https://github.com/slidevjs/slidev) · [Showcases](https://sli.dev/showcases.html)
+- ML has now hit many industries in a massive way, especially ones like the medical & pharmaceutical industry and disease research. 
+- Facial recognition systems in cities, roads or companies worldwide have also started using proper ML (though obviously non-GPT neural networks)
+- Image creation, recognition and editing has had some recent examples that really show just what is possible in the next 10-20 years if this kind of technology keeps surpassing expectations in time of growth.
