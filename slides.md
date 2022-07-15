@@ -179,6 +179,8 @@ Also with companies such as AMD & Nvidia really pushing the bar so far now with 
 - OpenAI GPT-2 Wikipedia - (https://en.wikipedia.org/wiki/GPT-2)
 - GitHub CoPilot - (https://github.com/features/copilot/)
 
+<br/>
+
 ### Finding this presentation and the links
 
 I made this presentation using sli.dev (Thanks CY) and have publically hosted it on a Git repository
