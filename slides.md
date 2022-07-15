@@ -166,3 +166,21 @@ Also with companies such as AMD & Nvidia really pushing the bar so far now with 
 - ML has now hit many industries in a massive way, especially ones like the medical & pharmaceutical industry and disease research. 
 - Facial recognition systems in cities, roads or companies worldwide have also started using proper ML (though obviously non-GPT neural networks)
 - Image creation, recognition and editing has had some recent examples that really show just what is possible in the next 10-20 years if this kind of technology keeps surpassing expectations in time of growth.
+
+---
+
+# Resources & References 
+
+- TabNine - (https://www.tabnine.com/)
+- Attention is all you need (Academic Paper) - (https://arxiv.org/abs/1706.03762)
+- Transformer Neural Networks - (https://builtin.com/artificial-intelligence/transformer-neural-network)
+- Language Models are Unsupervised Multitask Learners (Academic Paper) - (https://d4mucfpksywv.cloudfront.net/better-language-models/language-models.pdf)
+- OpenAI GPT-2 Example Source Code - (https://github.com/openai/gpt-2)
+- OpenAI GPT-2 Wikipedia - (https://en.wikipedia.org/wiki/GPT-2)
+- GitHub CoPilot - (https://github.com/features/copilot/)
+
+### Finding this presentation and the links
+
+I made this presentation using sli.dev (Thanks CY) and have publically hosted it on a Git repository
+on my Transreport user, so if you want access to the links or slides, please grab a clone or have a look on my user's repository over here:
+

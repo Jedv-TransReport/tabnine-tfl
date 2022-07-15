@@ -1,4 +1,4 @@
-# Welcome to [Slidev](https://github.com/slidevjs/slidev)!
+# Welcome to the repository for Jed's TransReport TFL on TabNine, slides all inside slides.md. Resource links at end of file.
 
 To start the slide show:
 
